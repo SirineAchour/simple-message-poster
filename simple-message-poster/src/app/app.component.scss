@@ -1,0 +1,56 @@
+mat-list-item {
+  position: relative;
+  height: auto !important;
+}
+
+.end {
+  position: absolute;
+  right: 0;
+  align-self: end;
+}
+
+mat-icon {
+  margin-right: 15px;
+  align-self: start;
+  margin-top: 15px;
+}
+
+.content {
+  //max-width: 82%;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
+*:not(mat-icon) {
+  font-family: "Ubuntu" !important;
+}
+
+.rel {
+  position: relative;
+}
+
+.abs-end {
+  position: absolute;
+  right: 0;
+}
+
+textarea{
+    width: -moz-available;
+}
+
+h2{
+    width: fit-content;
+    max-width: fit-content;
+}
+
+mat-card {
+    padding: 30px !important;
+}
+
+.close{
+    position: absolute;
+    top: 2px;
+    right: 0;
+    //margin: 5px;
+    cursor: pointer;
+       
+}
