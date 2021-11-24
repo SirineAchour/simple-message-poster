@@ -1,0 +1,29 @@
+version: '2.3' # specify docker-compose version
+
+# Define the services/containers to be run
+services:
+  front-server:
+    container_name: front-server
+    image: siriine/simple-message-poster:front
+    ports:
+      - 8080:8080
+      - 80:80
+      - 4200:4200
+  back-server:
+    container_name: back-server
+    image: siriine/simple-message-poster:back
+    ports:
+      - 3000:3000
+  database:
+    container_name: database
+    image: mysql:latest
+    ports:
+        - 3306:3306
+    command: --init-file /data/application/init.sql
+    volumes:
+        - ./init-db.sql:/data/application/init.sql
+    environment:
+        MYSQL_ROOT_USER: root
+        MYSQL_ROOT_PASSWORD: 
+        MYSQL_DATABASE: messages_db
+        MYSQL_ALLOW_EMPTY_PASSWORD: oui

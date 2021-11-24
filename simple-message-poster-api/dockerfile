@@ -1,0 +1,8 @@
+FROM node:16 as node
+WORKDIR /app
+EXPOSE 3000
+COPY . . 
+RUN chmod +x ./scripts/dependencies.sh && ./scripts/dependencies.sh
+
+#ENTRYPOINT [ "npm start:prod" ]
+ENTRYPOINT ["node", "dist/main"]

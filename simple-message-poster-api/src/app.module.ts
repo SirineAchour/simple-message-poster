@@ -7,8 +7,12 @@ import { Message } from './message.entity';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
-      type: 'sqlite',
+      type: 'mysql',
       database: 'messages_db',
+      host: 'database',
+      port: 3306,
+      username: 'root',
+      password: '',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),

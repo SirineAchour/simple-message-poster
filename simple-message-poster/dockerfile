@@ -1,0 +1,12 @@
+FROM node:16 as node
+WORKDIR /app
+EXPOSE 8080
+EXPOSE 80
+EXPOSE 4200
+COPY . . 
+RUN chmod +x ./scripts/dependencies.sh && ./scripts/dependencies.sh
+
+#ENTRYPOINT [ "ng serve","--configuration","production" ]
+#ENTRYPOINT ["npm", "dist/main"]
+
+CMD ng serve --host 0.0.0.0 --port 4200
