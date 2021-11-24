@@ -21,6 +21,6 @@ jobs:
             docker push siriine/simple-message-poster:front
             cd ../simple-message-poster-api
             docker build -t siriine/simple-message-poster:back .
-            docker push siriine/simple-message-poste:back
+            docker push siriine/simple-message-poster:back
 
             docker logout
