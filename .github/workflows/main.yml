@@ -1,0 +1,26 @@
+on:
+  push:
+    branches:
+      - "main"
+name: Push to Docker
+jobs:
+  run:
+      runs-on: [ubuntu-latest]
+      steps:
+        - uses: actions/checkout@v2
+
+        - name: Preparing to push
+          env:
+            repo_token: ${{ secrets.GITHUB_TOKEN }}
+            DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
+          run: |
+            docker login -u siriine -p $DOCKER_TOKEN
+            ls
+            cd simple-message-poster
+            docker build -t siriine/simple-message-poster:front .
+            docker push siriine/simple-message-poster:front
+            cd ../simple-message-poster-api
+            docker build -t siriine/simple-message-poster:back .
+            docker push siriine/simple-message-poste:back
+
+            docker logout
