@@ -1,2 +1,6 @@
 simple-message-poster/package-lock.json
 simple-message-poster-api/package-lock.json
+
+simple-message-poster/node_modules/
+simple-message-poster-api/node_modules/
+simple-message-poster-api/dist/
