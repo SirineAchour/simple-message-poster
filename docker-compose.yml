@@ -19,9 +19,7 @@ services:
     image: mysql:latest
     ports:
         - 3306:3306
-    command: --init-file /data/application/init.sql
-    volumes:
-        - ./init-db.sql:/data/application/init.sql
+    #command: mysql -uroot -e "CREATE DATABASE IF NOT EXISTS messages_db;"
     environment:
         MYSQL_ROOT_USER: root
         MYSQL_ROOT_PASSWORD: 

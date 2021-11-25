@@ -9,4 +9,4 @@ RUN chmod +x ./scripts/dependencies.sh && ./scripts/dependencies.sh
 #ENTRYPOINT [ "ng serve","--configuration","production" ]
 #ENTRYPOINT ["npm", "dist/main"]
 
-CMD ng serve --host 0.0.0.0 --port 4200
+CMD ng serve --host 0.0.0.0 --port 80
